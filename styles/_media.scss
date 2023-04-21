@@ -1,0 +1,177 @@
+@media (max-width:900px) {
+
+    .bars{
+        display: block;
+    }
+    header{
+        transition: all .4s;
+        &.active{
+            height: 420px !important;
+            
+            ul{
+                padding-top: 40px;
+            }
+        }
+        nav{
+            flex-direction: column;
+            align-items: flex-start;
+            overflow: hidden;
+            justify-content: flex-start;
+
+            
+            ul{
+                flex-direction: column;
+                padding-top: 40px;
+            }
+            
+        }
+    }
+   main{
+    #about{
+        .aboutflex{
+            flex-direction: column-reverse;
+
+            .abouttext{
+                max-width: 100%;
+            }
+        }
+    }
+
+    #services{
+        .servicegrid{
+            grid-template-columns: repeat(1,1fr);
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+
+            max-width: 700px;
+        }
+    }
+
+    #testimonials{
+        .testimonialsflex{
+            flex-direction: column;
+
+            .image{
+                width: 100%;
+            }
+
+            .slider{
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+    }
+
+    #contact{
+        .contactflex{
+            flex-direction: column;
+
+            .form{
+                border: 6px solid $primary;
+            }
+        }
+    }
+   }
+}
+
+@media (max-width:700px) {
+
+    .page{
+        .heading{
+            font-size: 1.8rem;
+        }
+    }
+    header{
+        height: 70px;
+        nav{
+            padding: .8rem 1.2rem;
+        }
+    }
+
+    main{
+        #hero{
+            padding: 2rem calc(1.2rem + 5vw) 4rem;
+            
+            .homeimage{
+                height: calc(500px + 10vh);
+                .introtext{
+                    font-size: 1.4rem;
+                }
+            }
+
+            .intro{
+                font-size: 2.6rem;
+            }
+    
+            .intro2{
+                font-size: 1.05rem;
+            }
+        }
+    }
+
+    footer{
+        div{
+            flex-direction: column ;
+            gap: 3rem;
+            padding: 0 2rem 3rem;
+        }
+    }
+
+}
+
+@media (max-width:500px) {
+    .page{
+        padding: 7rem 1rem 3rem;
+    }
+
+    main{
+        #hero{
+            padding: 2rem calc(.6rem + 5vw) 4rem;
+
+            .homeimage{
+                height: calc(400px + 10vh);
+                .introtext{
+                    font-size: 1.2rem;
+                }
+            }
+
+            .intro{
+                font-size: 2.3rem;
+            }
+    
+            .intro2{
+                font-size: 1rem;
+            }
+        }
+
+        #services{
+            .servicegrid{
+                .service{
+                    padding: .6rem;
+                    gap: 1rem;
+                    .image{
+                        height: 150px;
+                        width: 150px;
+                    }
+
+                    .details{
+                        width: calc(100% - 150px - 1rem);
+    
+                        .servicename{
+                            color: $primary;
+                            font-family: poppins-bold;
+                            font-size: .9rem;    
+                        }
+    
+                        .description{
+                            color: $text;
+                            font-size: .8rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

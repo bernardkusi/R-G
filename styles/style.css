@@ -1,0 +1,486 @@
+@font-face {
+  font-family: poppins-regular;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: poppins-bold;
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: poppins-light;
+  src: url(../fonts/Poppins-Light.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: poppins-light;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.click {
+  padding: 1rem 1.2rem;
+  background: #f8e359;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: poppins-regular;
+  font-size: 1.05rem;
+  text-align: center;
+}
+.click:hover {
+  background: rgb(245, 214, 16);
+}
+
+.page {
+  position: relative;
+  max-width: 1400px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7rem 2rem 3rem;
+}
+.page .heading {
+  font-size: 2.2rem;
+  text-align: center;
+  font-family: poppins-bold;
+  color: rgb(245, 214, 16);
+}
+
+.bars {
+  position: fixed;
+  width: 23px;
+  display: block;
+  height: 20px;
+  right: 1.5rem;
+  top: 2rem;
+  z-index: 11;
+  transform: scale(0.9);
+  transform-origin: center;
+  display: none;
+}
+.bars .bar {
+  width: 100%;
+  height: 3px;
+  background: grey;
+  border-radius: 2px;
+  position: relative;
+}
+.bars .bar::before, .bars .bar::after {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  content: "";
+  background: grey;
+  top: 8px;
+  border-radius: 2px;
+}
+.bars .bar::after {
+  width: 100%;
+  top: 17px;
+}
+
+header {
+  height: 100px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+header.shadow {
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1450980392);
+}
+header nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.5rem 3rem;
+  background: #fff;
+}
+header nav > a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: rgb(245, 214, 16);
+  font-family: poppins-bold;
+}
+header nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+header nav ul a {
+  text-decoration: none;
+  color: lightgrey;
+  position: relative;
+}
+header nav ul a::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -2px;
+  background: rgb(245, 214, 16);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: all 0.2s;
+}
+header nav ul a:hover {
+  color: rgb(245, 214, 16);
+}
+header nav ul a:hover::before {
+  width: 100%;
+  transform: scaleX(1);
+}
+
+main #hero {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 2rem 4rem 4rem;
+  background: linear-gradient(10deg, #f8e255 50%, #fff 50%);
+}
+main #hero .intro {
+  font-size: 3.6rem;
+  text-align: center;
+  font-family: poppins-bold;
+  color: #fff;
+  padding-top: 2rem;
+}
+main #hero .intro2 {
+  font-size: 1.35rem;
+  text-align: center;
+  padding: 1rem 0 3rem;
+  color: #545454;
+}
+main #hero .homeimage {
+  height: calc(100vh - 130px);
+  background: lightgrey;
+  position: relative;
+}
+main #hero .homeimage img {
+  filter: brightness(60%);
+}
+main #hero .homeimage .click {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, 0%);
+}
+main #hero .homeimage .introtext {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  font-size: 2.1rem;
+  text-align: center;
+  font-family: poppins-regular;
+}
+main #about .aboutflex {
+  display: flex;
+  gap: 3rem;
+  padding: 3.5rem 0;
+  align-items: center;
+}
+main #about .aboutflex .abouttext {
+  max-width: 47%;
+}
+main #about .aboutflex .aboutimage {
+  background: lightgrey;
+  height: 430px;
+  width: 100%;
+}
+main #services {
+  background: linear-gradient(rgba(255, 247, 192, 0.9), rgba(255, 247, 192, 0.9)), url(../about_image.jpg) center;
+  background-size: cover;
+}
+main #services .heading {
+  color: #fff;
+}
+main #services .servicegrid {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+main #services .servicegrid .service {
+  background: rgba(255, 255, 255, 0.792);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem;
+}
+main #services .servicegrid .service:nth-child(even) {
+  flex-direction: row-reverse;
+}
+main #services .servicegrid .service .image {
+  width: 170px;
+  height: 170px;
+  background: lightgrey;
+}
+main #services .servicegrid .service .details {
+  width: calc(100% - 170px - 2rem);
+}
+main #services .servicegrid .service .details .servicename {
+  color: rgb(245, 214, 16);
+  font-family: poppins-bold;
+}
+main #services .servicegrid .service .details .description {
+  color: #545454;
+  font-size: 0.95rem;
+}
+main #testimonials .testimonialsflex {
+  padding: 3rem 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+main #testimonials .testimonialsflex > .slider {
+  width: 45%;
+  padding: 2rem;
+}
+main #testimonials .testimonialsflex .image {
+  width: 55%;
+  background: lightgrey;
+  height: 470px;
+}
+main #testimonials .testimonialsflex .testimonial {
+  padding: 3rem 2rem;
+  width: 100%;
+  border: 8px solid #f7de41;
+  background: #fff;
+}
+main #testimonials .testimonialsflex .testimonial .name {
+  color: rgb(245, 214, 16);
+  font-size: 1.2rem;
+  padding: 0.3rem 0;
+  font-family: poppins-regular;
+}
+main #testimonials .testimonialsflex .testimonial .comment {
+  color: #545454;
+  font-size: 0.95rem;
+}
+main #contact {
+  padding-bottom: 5rem;
+}
+main #contact .contactflex {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+main #contact .contactflex > div {
+  width: 100%;
+  background: lightgrey;
+  min-height: 450px;
+  position: relative;
+}
+main #contact .contactflex .form {
+  padding: 1rem 1rem;
+  background: #fff;
+}
+main #contact .contactflex .form .control {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0.4rem;
+}
+main #contact .contactflex .form .control label {
+  font-size: 0.9rem;
+  color: grey;
+}
+main #contact .contactflex .form .control input, main #contact .contactflex .form .control textarea {
+  padding: 0.5rem 0.7rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+  resize: none;
+  max-height: 7rem;
+}
+main #contact .contactflex .form .control input:focus, main #contact .contactflex .form .control textarea:focus {
+  border-color: rgb(245, 214, 16);
+}
+main #contact .contactflex .form .control input:focus + label, main #contact .contactflex .form .control textarea:focus + label {
+  color: rgb(245, 214, 16);
+}
+main #contact .contactflex .form .click {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+}
+main #contact .contactflex .form .label {
+  text-align: center;
+  color: rgb(245, 214, 16);
+  font-family: poppins-bold;
+  font-size: 1.6rem;
+  padding-bottom: 2rem;
+}
+
+footer {
+  background: linear-gradient(180deg, #faeb8a, rgba(217, 217, 217, 0.831372549)), url("../about_image.jpg");
+  background-position: center;
+  background-size: cover;
+  padding-top: 5rem;
+}
+footer div {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1300px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3rem 0 6rem;
+}
+footer div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+footer div ul a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: rgb(75, 75, 75);
+}
+footer div ul a:hover {
+  text-decoration: underline;
+}
+footer .copy {
+  background: #3d3d3d;
+  padding: 3rem 0;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .bars {
+    display: block;
+  }
+  header {
+    transition: all 0.4s;
+  }
+  header.active {
+    height: 420px !important;
+  }
+  header.active ul {
+    padding-top: 40px;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    justify-content: flex-start;
+  }
+  header nav ul {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+  main #about .aboutflex {
+    flex-direction: column-reverse;
+  }
+  main #about .aboutflex .abouttext {
+    max-width: 100%;
+  }
+  main #services .servicegrid {
+    grid-template-columns: repeat(1, 1fr);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 700px;
+  }
+  main #testimonials .testimonialsflex {
+    flex-direction: column;
+  }
+  main #testimonials .testimonialsflex .image {
+    width: 100%;
+  }
+  main #testimonials .testimonialsflex .slider {
+    width: 100%;
+    max-width: 500px;
+  }
+  main #contact .contactflex {
+    flex-direction: column;
+  }
+  main #contact .contactflex .form {
+    border: 6px solid rgb(245, 214, 16);
+  }
+}
+@media (max-width: 700px) {
+  .page .heading {
+    font-size: 1.8rem;
+  }
+  header {
+    height: 70px;
+  }
+  header nav {
+    padding: 0.8rem 1.2rem;
+  }
+  main #hero {
+    padding: 2rem calc(1.2rem + 5vw) 4rem;
+  }
+  main #hero .homeimage {
+    height: calc(500px + 10vh);
+  }
+  main #hero .homeimage .introtext {
+    font-size: 1.4rem;
+  }
+  main #hero .intro {
+    font-size: 2.6rem;
+  }
+  main #hero .intro2 {
+    font-size: 1.05rem;
+  }
+  footer div {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 2rem 3rem;
+  }
+}
+@media (max-width: 500px) {
+  .page {
+    padding: 7rem 1rem 3rem;
+  }
+  main #hero {
+    padding: 2rem calc(0.6rem + 5vw) 4rem;
+  }
+  main #hero .homeimage {
+    height: calc(400px + 10vh);
+  }
+  main #hero .homeimage .introtext {
+    font-size: 1.2rem;
+  }
+  main #hero .intro {
+    font-size: 2.3rem;
+  }
+  main #hero .intro2 {
+    font-size: 1rem;
+  }
+  main #services .servicegrid .service {
+    padding: 0.6rem;
+    gap: 1rem;
+  }
+  main #services .servicegrid .service .image {
+    height: 150px;
+    width: 150px;
+  }
+  main #services .servicegrid .service .details {
+    width: calc(100% - 150px - 1rem);
+  }
+  main #services .servicegrid .service .details .servicename {
+    color: rgb(245, 214, 16);
+    font-family: poppins-bold;
+    font-size: 0.9rem;
+  }
+  main #services .servicegrid .service .details .description {
+    color: #545454;
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=style.css.map */
